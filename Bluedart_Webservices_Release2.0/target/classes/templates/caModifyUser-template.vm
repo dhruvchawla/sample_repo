@@ -1,0 +1,16 @@
+<html>
+ 
+<head></head>
+ 
+<body>
+    <p>Dear User,</p>
+    
+    <p>Your Blue Dart account assocated with loginid ${loginid} has been modified as follows :</p>
+    
+    <p>User Name : ${username}</p>
+    <p>Email ID : ${emailid}</p>
+    <p>Phone number : ${phone} </p>
+    
+</body>
+ 
+</html>

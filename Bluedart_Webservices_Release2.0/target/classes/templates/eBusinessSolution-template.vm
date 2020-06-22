@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Email Document</title>
+</head>
+
+<body style="background:#ccc;font-family: 'Arial', sans-serif;font-size:14px">
+<table width="750" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td bgcolor="#fff" style="background: #fff;">
+		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+			  <tr>
+				<td bgcolor="#ffcc00" style=""><img src = "cid:${banner}" alt = "logoimage1"></td>
+			  </tr>
+			  <tr>
+				<td style=""><img src = "cid:${logo}" alt = "logoimage"></td>
+			  </tr>
+			  <tr>
+				<td>
+					<table width="100%" style="background:#f5f5f5;padding: 10px;padding-bottom: 20px;" cellpadding="0">
+						<tbody>
+						  <tr>
+							<td style="padding-left:15px; padding-right: 15px;padding-bottom: 0px; padding-top:20px;font-family: 'Arial', sans-serif;font-size:12px; color: rgba(70, 70, 70, 0.88);">Dear Team,</td>
+						  </tr> <tr>
+							<td style="padding-left:15px; padding-right: 15px;padding-bottom: 0px; font-family: 'Arial', sans-serif;font-size:12px; color: rgba(70, 70, 70, 0.88);">Inquiry for E - Business Solution has been submitted. Kindly find the details below.</td>
+						  </tr>
+						  <tr>
+						  <td style="padding: 13px">
+							<table style="font-size: 12px;background: #fff;border: 1px solid #e6e4e4;border-collapse: collapse;width:100%">
+								<tbody>
+								#if(${organisationName})
+								<tr>
+									<td style=" background-color:#e5e5e5border: 1px solid #e6e4e4;border-collapse: collapse; padding: 5px 10px;"><strong>Organisation Name</strong></td>
+									<td style="border: 1px solid #e6e4e4;border-collapse: collapse; padding: 5px 10px;">${organisationName}</td>
+								</tr>
+								#end
+								#if(${contactPerson})
+								<tr>
+									<td style="border: 1px solid #e6e4e4;border-collapse: collapse; padding: 5px 10px;"><strong>Contact Person</strong></td>
+									<td style="border: 1px solid #e6e4e4;border-collapse: collapse; padding: 5px 10px;">${contactPerson}</td>
+								</tr>
+								#end
+								#if(${emailId})
+								<tr>
+									<td style="border: 1px solid #e6e4e4;border-collapse: collapse; padding: 5px 10px;"><strong>Email ID</strong></td>
+									<td style="border: 1px solid #e6e4e4;border-collapse: collapse; padding: 5px 10px;">${emailId}</td>
+								</tr>
+								#end
+								#if(${mobileNumber})
+								<tr>
+									<td style="border: 1px solid #e6e4e4;border-collapse: collapse; padding: 5px 10px;"><strong>Mobile Number</strong></td>
+									<td style="border: 1px solid #e6e4e4;border-collapse: collapse; padding: 5px 10px;">${mobileNumber}</td>
+								</tr>
+								#end
+								#if(${pinCode})
+								<tr>
+									<td style="border: 1px solid #e6e4e4;border-collapse: collapse; padding: 5px 10px;"><strong>PIN Code</strong></td>
+									<td style="border: 1px solid #e6e4e4;border-collapse: collapse; padding: 5px 10px;">${pinCode}</td>
+								</tr>
+								#end
+								#if(${website})
+								<tr>
+									<td style="border: 1px solid #e6e4e4;border-collapse: collapse; padding: 5px 10px;"><strong>Organisation's Site Address</strong></td>
+									<td style="border: 1px solid #e6e4e4;border-collapse: collapse; padding: 5px 10px;">${website}</td>
+								</tr>
+								#end
+								#if(${areYouUsingBlueDart})
+								<tr>
+									<td style="border: 1px solid #e6e4e4;border-collapse: collapse; padding: 5px 10px;"><strong>Are You Using Blue Dart?</strong></td>
+									<td style="border: 1px solid #e6e4e4;border-collapse: collapse; padding: 5px 10px;">${areYouUsingBlueDart}</td>
+								</tr>
+								#end
+								#if(${areYouLookingFor})
+								<tr>
+									<td style="border: 1px solid #e6e4e4;border-collapse: collapse; padding: 5px 10px;"><strong>Are You Looking For</strong></td>
+									<td style="border: 1px solid #e6e4e4;border-collapse: collapse; padding: 5px 10px;">${areYouLookingFor}</td>
+								</tr>
+								#end
+								
+								#if(${doYouHaveWebService})
+								<tr>
+									<td style="border: 1px solid #e6e4e4;border-collapse: collapse; padding: 5px 10px;"><strong>Do You Have A Web Service?</strong></td>
+									<td style="border: 1px solid #e6e4e4;border-collapse: collapse; padding: 5px 10px;">${doYouHaveWebService}</td>
+								</tr>						
+								#end
+								#if(${platformCurrentlyUse})
+								<tr>
+									<td style="border: 1px solid #e6e4e4;border-collapse: collapse; padding: 5px 10px;"><strong>Which Platform Do You Currently Use?</strong></td>
+									<td style="border: 1px solid #e6e4e4;border-collapse: collapse; padding: 5px 10px;">${platformCurrentlyUse}</td>
+								</tr>						
+								#end
+								#if(${softwareCurrentlyUse})
+								<tr>
+									<td style="border: 1px solid #e6e4e4;border-collapse: collapse; padding: 5px 10px;"><strong>Which Software Do You Currently Use For Program Coding?</strong></td>
+									<td style="border: 1px solid #e6e4e4;border-collapse: collapse; padding: 5px 10px;">${softwareCurrentlyUse}</td>
+								</tr>						
+								#end
+								#if(${dataBaseCurrentlyUse})
+								<tr>
+									<td style="border: 1px solid #e6e4e4;border-collapse: collapse; padding: 5px 10px;"><strong>Which Backend Database Server Do You Currently Use?</strong></td>
+									<td style="border: 1px solid #e6e4e4;border-collapse: collapse; padding: 5px 10px;">${dataBaseCurrentlyUse}</td>
+								</tr>						
+								#end
+								
+								#if(${technologyToIntigrate})
+								<tr>
+									<td style="border: 1px solid #e6e4e4;border-collapse: collapse; padding: 5px 10px;"><strong>Please Indicate The Blue Dart Technology Solution(s) You Would Like To Integrate?</strong></td>
+									<td style="border: 1px solid #e6e4e4;border-collapse: collapse; padding: 5px 10px;">${technologyToIntigrate}</td>
+								</tr>	
+								#end
+								#if(${yourCustomerCode})
+								<tr>
+									<td style="border: 1px solid #e6e4e4;border-collapse: collapse; padding: 5px 10px;"><strong>Your Customer Code</strong></td>
+									<td style="border: 1px solid #e6e4e4;border-collapse: collapse; padding: 5px 10px;">${yourCustomerCode}</td>
+								</tr>	
+								#end
+								#if(${message})
+								<tr>
+									<td style="border: 1px solid #e6e4e4;border-collapse: collapse; padding: 5px 10px;"><strong>Please Share Additional Information(if any)</strong></td>
+									<td style="border: 1px solid #e6e4e4;border-collapse: collapse; padding: 5px 10px;">${message}</td>
+								</tr>	
+								#end
+								</tbody>
+							</table>
+							</td>
+						  </tr>
+						  
+						</tbody>
+					</table>
+				</td>
+			  </tr>
+			
+			   <tr>
+				<td bgcolor="#da5903" style="height: 1px;background: #b5b3b3;"></td>
+			  </tr>
+			  <tr>
+				 <td><table width="100%" border="0" cellspacing="0" cellpadding="0" style="text-align:center">
+					<tbody>
+					  <tr>
+						<td bgcolor="#ccc" style="padding-bottom: 10px; padding-left:15px; padding-right: 15px; padding-top: 10px;font-family: 'Arial', sans-serif;font-size:12px;background-color: #f5f5f5;"><small><a href="https://www.bluedart.com/terms-condition">Terms and Conditions</a> of Blue Dart shall apply.</small></td>
+					  </tr>
+					</tbody>
+				  </table></td>
+			  </tr>
+			</tbody>
+		  </table>
+		
+		 
+	 </td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

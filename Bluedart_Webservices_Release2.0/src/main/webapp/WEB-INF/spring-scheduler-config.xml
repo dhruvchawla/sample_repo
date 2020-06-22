@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+						http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd 
+						http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
+
+	<context:component-scan base-package="com.bluedart" /> 
+
+	<context:annotation-config></context:annotation-config>
+
+	<!-- AwbQuery Configuration -->	
+ 	<bean id="awbJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="AwbQueryScheduler" />
+		<property name="targetMethod" value="executeAwbQueryScheduler" />
+		<property name="concurrent" value="false" />
+	</bean>
+		
+		
+		
+	 <bean id="awbTrigger"  class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="awbJobDetail" />
+	    <property name="cronExpression" value="0/30 * * * * ?" />
+   </bean> 	
+  
+   <!-- RefQuery Configuration -->	
+   <bean id="refJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="RefQueryScheduler" />
+		<property name="targetMethod" value="executeRefQueryScheduler" />
+		<property name="concurrent" value="false" />
+	</bean>
+		
+		
+		
+	 <bean id="refTrigger"  class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="refJobDetail" />
+	    <property name="cronExpression" value="0/30 * * * * ?" />
+   </bean> 	
+   
+   <!-- IntimateMe Configuration -->	
+    <bean id="intimateMeJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="IntimateMeScheduler" />
+		<property name="targetMethod" value="executeIntimateMeScheduler" />
+		<property name="concurrent" value="false" />
+	</bean>
+		
+		
+		
+	 <bean id="intimateMeTrigger"  class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="intimateMeJobDetail" />
+	    <property name="cronExpression" value="0 0/1 * * * ?" />
+   </bean> 
+   
+  <!-- SMS Configuration -->	
+ 	<bean id="smsJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="SMSScheduler" />
+		<property name="targetMethod" value="executeSmsScheduler" />
+		<property name="concurrent" value="false" />
+	</bean>
+		
+		
+		
+	 <bean id="smsTrigger"  class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="smsJobDetail" />
+	    <property name="cronExpression" value="0/30 * * * * ?" />
+   </bean> 	
+   
+   
+   <!-- PODMailScheduler configuration -->
+   
+    	<bean id="podJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="PODMAILScheduler" />
+		<property name="targetMethod" value="executePODMAILScheduler" />
+		<property name="concurrent" value="false" />
+	</bean>
+		
+		
+		
+	 <bean id="podTrigger"  class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="podJobDetail" />
+	   <!--  <property name="cronExpression" value="0 0/1 * * * ?" /> -->
+ 	      <property name="cronExpression" value="0 0 4-16 * * ?" /> 
+   </bean> 	
+  	
+		
+	<bean  class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<!-- <property name="jobDetails">
+			<list>
+				<ref bean="awbJobDetail" />
+			 	<ref bean="refJobDetail" /> 
+			 	<ref bean="intimateMeJobDetail" /> 
+			 	<ref bean="smsJobDetail" /> 
+			</list>
+		</property> -->
+
+		<property name="triggers">
+			<list>
+				<ref bean="awbTrigger" />
+			     <ref bean="refTrigger" />
+			    <ref bean="intimateMeTrigger" />
+			    <ref bean="smsTrigger" /> 
+			    <ref bean="podTrigger" /> 
+			</list>
+		</property>
+	</bean>
+	 
+	
+	
+	
+	
+
+</beans>

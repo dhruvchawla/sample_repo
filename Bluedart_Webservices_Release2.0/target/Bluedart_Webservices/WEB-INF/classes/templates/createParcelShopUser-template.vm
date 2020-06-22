@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Email Document</title>
+</head>
+
+<body style="background:#ccc;font-family: 'Arial', sans-serif;font-size:14px">
+<table width="750" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td bgcolor="#fff" style="background: #fff;">
+		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+			  <tr>
+				<td bgcolor="#ffcc00" style=""><img src = "cid:${banner}" alt = "logoimage1"></td>
+			  </tr>
+			  <tr>
+				<td style=""><img src = "cid:${logo}" alt = "logoimage"></td>
+			  </tr>
+			  <tr>
+				<td style="">
+					<table width="100%" style="background:#f5f5f5;padding: 10px;padding-bottom: 20px;" cellpadding="0">
+						<tbody>
+						  <tr>
+							<td style="padding-bottom: 5px; padding-left:15px; padding-right: 15px; padding-top: 10px;font-family: 'Arial', sans-serif;font-size:12px; color: rgba(70, 70, 70, 0.88);">Dear Team,</td>
+						  </tr>
+						  <tr>
+							<td style="padding-left:15px; padding-right: 15px;padding-bottom: 0px; font-family: 'Arial', sans-serif;font-size:12px; color: rgba(70, 70, 70, 0.88);">A ${userType} user has been created. Below are the details: 
+							</td>
+						  </tr>
+						  <tr>
+							<td style="padding-left:15px; padding-right: 15px; padding-bottom: 0px; padding-top:10px; font-family: 'Arial', sans-serif;font-size:12px;">Login ID		: <b>${loginId}</b></td>
+						  </tr>
+						  <tr>
+							<td style="padding-left:15px; padding-right: 15px; padding-bottom: 0px; padding-top:0px; font-family: 'Arial', sans-serif;font-size:12px;">User Name    :  <b>${userName}</b></td>
+						  </tr>
+						  <tr>
+							<td style="padding-left:15px; padding-right: 15px;padding-bottom: 0px; font-family: 'Arial', sans-serif;font-size:12px;padding-top: 10px;"><strong>Parcel Shops associated with the Login ID :</strong></td>
+						  </tr>
+						  <tr>
+						   <td style="padding-top: 10px ;padding-bottom: 15px;padding-left: 15px;padding-right: 15px">
+							<table border="1" style="font-size: 12px;background: #fff;border: 1px solid #e6e4e4;border-collapse: collapse;width:100%">
+								<tbody>
+								<tr style="background-color:#e5e5e5;">
+									<td style="border: 1px solid #e6e4e4;border-collapse: collapse; padding: 5px 10px;"><strong style="color:#44ae5e;">Parcel Shop Code</strong></td>
+									<td style="border: 1px solid #e6e4e4;border-collapse: collapse; padding: 5px 10px"><strong style="color:#44ae5e;">Parcel Shop Name</strong></td>
+									
+								</tr>
+								#foreach( $obj1 in $parcelShopDetails )
+								<tr>
+									<td style="border: 1px solid #e6e4e4;border-collapse: collapse; padding: 5px 10px">$obj1.psCode</td>
+									<td style="border: 1px solid #e6e4e4;border-collapse: collapse; padding: 5px 10px">$obj1.psName</td>
+								</tr>
+								#end
+								</tbody>
+							</table>
+							</td>
+						  </tr>
+						</tbody>
+					</table>
+				</td>
+			  </tr>
+			  <tr >
+			  <td>
+					<table width="100%" style="background: #000;padding-top: 0px;"  cellspacing="10" cellpadding="0">
+						<tbody>
+						  <tr>
+							<td style="padding-bottom:0px; padding-right: 15px; padding-top:0px;">
+								 <table width="100%"   cellspacing="0" cellpadding="0">
+									<tbody>
+									  <tr>
+										<td style="padding-left:15px;padding-right: 15px;font-family: 'Arial', sans-serif;font-size:12px;color: rgb(146, 138, 138);"><strong>Disclaimer: </strong>This message is confidential and is intended for the addressee, and may also be privileged. Any unauthorized disclosure,copying, distribution or use of this message is strictly prohibited, and if done, will result in strict legal action.This message is not guaranteed  to be complete or error free. No liability is assumed for any errors  and/or omissions in the contents of the message.
+
+										</td>
+									  </tr>
+									</tbody>
+								  </table>
+							</td>
+						  </tr>
+						</tbody>
+					</table>
+					</td>
+			  </tr>
+			  <tr>
+				 <table width="100%" border="0" cellspacing="0" cellpadding="0" style="text-align:center">
+					<tbody>
+					  <tr>
+						<td bgcolor="#ccc" style="padding-bottom: 10px; padding-left:15px; padding-right: 15px; padding-top: 10px;font-family: 'Arial', sans-serif;font-size:12px"><small><a href="https://bluedart.com/terms-condition">Terms and Conditions</a> of Blue Dart shall apply.</small></td>
+					  </tr>
+					</tbody>
+				  </table>
+			  </tr>
+			</tbody>
+		  </table>
+		
+		 
+	 </td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>
